@@ -39,6 +39,14 @@ ifneq ($(TARGET_CAMERA_PACKAGE_NAME),)
     $(call soong_config_set,camera,package_name,$(TARGET_CAMERA_PACKAGE_NAME))
 endif
 
+ifneq ($(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB),)
+    $(call soong_config_set,camera,needs_client_info_lib,$(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB))
+endif
+
+ifneq ($(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB_OPLUS),)
+    $(call soong_config_set,camera,needs_client_info_lib_oplus,$(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB_OPLUS))
+endif
+
 # Charger
 lineage_charger_density := mdpi
 ifneq (,$(TARGET_SCREEN_DENSITY))
